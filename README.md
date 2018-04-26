@@ -1,2 +1,2 @@
 # Minesweeper
-Test of change for minesweeper
+In this assignment, you will create a game like Minesweeper ( https://youtu.be/MPKXNLkDz10 ), as a class. Your game board should be 10x10, with a score displayed, a restart button (the smiley face), and a timer. View the video above for the rules of the game. This is a group project, so you, as a class, will hand in one copy of this assignment. Each student will be responsible to complete functions of the assignment that contributes to the overall assignment. You will be required to use the discussion board for the assignment so that I can see who is doing what. Also, be sure to comment in each function or block of code, who is responsible for creating it.
