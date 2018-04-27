@@ -6,7 +6,7 @@
 //
 
 // Create a new scene.
-MainScene scene = new MinesweeperScene(new Rect(0, 0, 600, 400));
+MinesweeperScene scene = new MinesweeperScene(new Rect(0, 0, 600, 400));
 
 void settings() {
 	// Configure the size.
