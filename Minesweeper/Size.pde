@@ -8,19 +8,19 @@
 public class Size {
 	// MARK: - Properties
 
-  	/// A width value.
-  	public float width;
+	/// A width value.
+	public float width;
 
-  	/// A height value.
-  	public float height;
+	/// A height value.
+	public float height;
 
 	// MARK: - Initialization
 
-  	/// Creates a new receiver with the specified `width` and `height`.
-  	public Size(float width, float height) {
-    	this.width = width;
-    	this.height = height;
-  	}
+	/// Creates a new receiver with the specified `width` and `height`.
+	public Size(float width, float height) {
+		this.width = width;
+		this.height = height;
+	}
 
 	// MARK: - Comparing Sizes
 

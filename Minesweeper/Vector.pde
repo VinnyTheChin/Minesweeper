@@ -11,7 +11,7 @@ public class Vector {
 
 	/// The x component of the vector.
 	public float dx;
-
+	
 	/// The y component of the vector.
 	public float dy;
 

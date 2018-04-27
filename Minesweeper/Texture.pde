@@ -35,7 +35,7 @@ public class Texture {
 	// MARK: - Initialization
 
 	public Texture(PImage image) {
-        setImage(image);
+		setImage(image);
 	}
 
 	public Texture(String name) {

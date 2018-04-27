@@ -37,7 +37,7 @@ public class Scene extends Node {
 
 	/// Creates a new Scene with the provided frame.
 	public Scene(Rect frame) {
-    super();
+		super();
 
 		// Configure some important properties.
 		setFrame(frame);
@@ -68,8 +68,8 @@ public class Scene extends Node {
 	///
 	/// Parameter currentTime: Time since starting the program in milliseconds.
 	public void draw(int currentTime) {
-    // Draw the background with the provided color.
-    background(backgroundColor());
+		// Draw the background with the provided color.
+		background(backgroundColor());
 
 		super.draw(currentTime);
 	}
