@@ -1,8 +1,8 @@
 //
-//  Main.pde
-//  1984
+//  Minesweeper.pde
+//  Minesweeper
 //
-//  Created by David Moore on 4/23/18.
+//  Created by David Moore on 4/26/18.
 //
 
 import java.util.Collections;
@@ -14,7 +14,7 @@ public static String kCoderScoresArray = "scores";
 // Create a new scene.
 MainScene scene = new MainScene(new Rect(0, 0, 600, 700));
 
-// Declare a boolean value representing if the 
+// Declare a boolean value representing if the
 boolean isPaused = true;
 
 // Boolean value indicating if the scene is displaying high scores.
@@ -58,10 +58,10 @@ void sortHighScores() {
 void saveHighScores() {
   // Create a new Coder.
   Coder aCoder = new Coder();
-  
+
   // Encode the array.
   aCoder.encodeArrayForKey(highScores, kCoderScoresArray);
-  
+
   // Write to the file path.
   aCoder.writeToFilePath(kScoreDataFilePath);
 }
@@ -73,35 +73,35 @@ void draw() {
   if (isDisplayingHighScores) {
     // Paint a dark background.
     background(0);
-    
+
     // Set fill and text size.
     fill(255);
     textSize(20);
-    
+
     // Print the title.
     text("*** High Scores (Press Tab to Continue) ***", 12, 20);
-    
+
     // Go through each score and print it.
     for (int i = 0; i < highScores.size(); i++) {
       // Retrieve the particular score.
       Score highScore = highScores.get(i);
-      
+
       // Draw the player's name and the corresponding score.
       text("Player: " + highScore.name() + " -> " + (int)(highScore.value() + 0.5), 12, (i + 2) * 20);
     }
-    
+
     return;
   }
 
   // Do some special things if the scene 'isPaused'.
   if (isPaused) {
     background(100);
-    
+
     // Use a white fill and print out some stats for the user.
     fill(255);
     textSize(20);
     text("Press Enter to Begin!\n Arrow Keys for Movement and Space Bar For Shooting", 20, height / 2);
-    
+
     return;
   }
 
@@ -109,31 +109,31 @@ void draw() {
 	scene.update(currentTime);
 	scene.didFinishUpdate();
 	scene.draw(currentTime);
-  
+
   // Draw the top stack.
   fill(0);
   rect(0, 0, width, 40);
-  
+
   // Write in the top stack.
   textSize(16);
   fill(255);
   text("Health: " + (int)((scene.player().health()) + 0.5), 12, 24);
   text("Level: " + (scene.currentLevel()), 120, 24);
   text("Score: " + (int)(scene.score() + 0.5), 200, 24);
-  
+
   // Kill the game if the player's health is too low.
   if (scene.player().health() <= 0) {
     // Configure these booleans.
     isDisplayingHighScores = true;
     shouldResetScene = true;
     isPaused = true;
-    
+
     // Add the user's score to the array.
     highScores.add(new Score("Player " + highScores.size() + 1, scene.score()));
-    
+
     // Call for the scores to be sorted.
     sortHighScores();
-    
+
     // Save the scores.
     saveHighScores();
   }
@@ -145,28 +145,28 @@ void keyPressed() {
     // Stop displaying them.
     isDisplayingHighScores = false;
   }
-  
-  // Un-pause the scene if the keyCode is 
+
+  // Un-pause the scene if the keyCode is
   if (isPaused && keyCode == ENTER) {
     // Continue if the scene should be reset.
     if (!shouldResetScene) {
       isPaused = false;
       return;
     }
-    
+
     // Create a new scene.
     scene = new MainScene(new Rect(0, 0, 600, 700));
-    
+
     // Notify the scene that it has been loaded.
     scene.sceneDidLoad();
-    
+
     // Un-pause the scene.
     isPaused = false;
   }
-  
+
   if (isPaused)
     return;
-  
+
 	// Call the scene's key down event.
 	scene.keyDownWithEvent(new KeyEvent());
 }

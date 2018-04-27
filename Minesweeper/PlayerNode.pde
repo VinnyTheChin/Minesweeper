@@ -1,8 +1,8 @@
 //
 //  PlayerNode.pde
-//  1984
+//  Minesweeper
 //
-//  Created by David Moore on 4/23/18.
+//  Created by David Moore on 4/26/18.
 //
 
 public static final String kPlayerHorizontalMoveAction = "PlayerHorizontalMoveActionKey";
@@ -11,15 +11,15 @@ public static final String kPlayerVerticalMoveAction = "PlayerVerticalMoveAction
 public class PlayerNode extends SpriteNode {
 
   // MARK: - Instance Variables
-  
+
   /// Health value of the receiver for gameplay purposes.
   private float _health;
-  
+
 	// MARK: - Properties
 
   /// Health value of the receiver for gameplay purposes.
   public float health() { return _health; }
-  
+
   /// Sets the health value of the receiver for gameplay purposes.
   public void setHealth(float health) { _health = health; }
 
@@ -32,18 +32,18 @@ public class PlayerNode extends SpriteNode {
 	}
 
   // MARK: - Lifecycle
-  
+
   /// Performs any node-specific updates that need to occur before actions are evaluated.
   ///
   /// - Parameter currentTime: The time since starting the program in milliseconds.
   public void update(int currentTime) {
     super.update(currentTime);
-    
+
     // Check if the player is trying to move off the screen.
     if (frame().y() >= parent().frame().height() || frame().y() <= 0) {
       removeActionForKey(kPlayerHorizontalMoveAction);
     }
-    
+
     // Check if the player is trying to move off the screen.
     if (frame().x() >= parent().frame().width() || frame().x() <= 0) {
       removeActionForKey(kPlayerVerticalMoveAction);
@@ -55,7 +55,7 @@ public class PlayerNode extends SpriteNode {
   /// Informs the receiver that the user has pressed a key.
   public void keyDownWithEvent(KeyEvent event) {
     super.keyDownWithEvent(event);
-    
+
     // Switch on the event character, to look for the spacebar.
     switch (event.character()) {
     case ' ':
@@ -101,13 +101,13 @@ public class PlayerNode extends SpriteNode {
       break;
     }
   }
-  
+
   /// Informs the receiver that the user has released a key.
   public void keyUpWithEvent(KeyEvent event) {
     super.keyUpWithEvent(event);
-    
+
     // Remove the action if the codes are appropriate.
-    if (event.code() == LEFT || event.code() == RIGHT) { 
+    if (event.code() == LEFT || event.code() == RIGHT) {
       removeActionForKey(kPlayerHorizontalMoveAction);
     } else if (event.code() == UP || event.code() == DOWN) {
       removeActionForKey(kPlayerVerticalMoveAction);

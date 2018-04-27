@@ -1,8 +1,8 @@
 //
-//  Node.pde
-//  1984
+//  Action.pde
+//  Minesweeper
 //
-//  Created by David Moore on 3/21/18.
+//  Created by David Moore on 4/26/18.
 //
 
 public interface ActionDelegate {
@@ -107,7 +107,7 @@ public class Action {
 			// Calculate the change in x and y for the entire duration.
 			float dx = location.x - node.frame().x();
 			float dy = location.x - node.frame().y();
-      
+
 			// Print out a no-implementation error.
 			println("location movement is not yet implemented");
 		}

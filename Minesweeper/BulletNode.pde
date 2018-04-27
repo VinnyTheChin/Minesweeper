@@ -1,8 +1,8 @@
 //
 //  BulletNode.pde
-//  1984
+//  Minesweeper
 //
-//  Created by David Moore on 4/24/18.
+//  Created by David Moore on 4/26/18.
 //
 
 public class BulletNode extends SpriteNode {
@@ -34,8 +34,8 @@ public class BulletNode extends SpriteNode {
   public BulletNode(float weight, boolean isFriendly) {
     super();
     setWeight(weight);
-    
-    // Set the 
+
+    // Set the
     if (weight >= 1.0) {
       setTexture(new Texture("Textures/Missile.png"));
     } else if (isFriendly) {
@@ -43,7 +43,7 @@ public class BulletNode extends SpriteNode {
     } else {
       setTexture(new Texture("Textures/Single Bullet.png"));
     }
-    
+
     // Update the 'isFriendly' boolean.
     setIsFriendly(isFriendly);
   }
@@ -52,20 +52,20 @@ public class BulletNode extends SpriteNode {
 
   public void update(int currentTime) {
     super.update(currentTime);
-    
+
     if (parent() == null)
       return;
-      
+
     // Check for intersection of nodes contained by the parent.
     for (Node node : parent().children()) {
       // Make sure to avoid testing the receiver.
       if (node.isEqualToNode(this))
         continue;
-      
+
       // Check if the node intersects the receiver.
       if (!node.frame().intersectsRect(frame()))
         continue;
-      
+
       // Declare a boolean which determines if the receiver should remove itself from the parent.
       boolean shouldRemoveFromParent = true;
 
@@ -77,7 +77,7 @@ public class BulletNode extends SpriteNode {
         PlayerNode playerNode = (PlayerNode)node;
         playerNode.setHealth(playerNode.health() - weight() * 100);
       } else { shouldRemoveFromParent = false; }
-      
+
       // Remove the bullet from the scene, if required.
       if (shouldRemoveFromParent) {
         removeFromParent();

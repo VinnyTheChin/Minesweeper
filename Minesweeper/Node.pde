@@ -1,8 +1,8 @@
 //
 //  Node.pde
-//  1984
+//  Minesweeper
 //
-//  Created by David Moore on 3/18/18.
+//  Created by David Moore on 4/26/18.
 //
 
 import java.util.List;

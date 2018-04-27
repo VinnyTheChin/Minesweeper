@@ -1,8 +1,8 @@
 //
-//  SpriteNode.pde
-//  1984
+//  Texture.pde
+//  Minesweeper
 //
-//  Created by David Moore on 3/21/18.
+//  Created by David Moore on 4/26/18.
 //
 
 public class Texture {
