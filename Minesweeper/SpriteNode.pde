@@ -12,8 +12,10 @@ public class SpriteNode extends Node {
 	/// The sprite’s color.
 	private color _backgroundColor;
 
+	/// The texture used to draw the sprite.
 	private Texture _texture;
 
+	/// Corner radius of the receiver.
 	private float _cornerRadius;
 
 	// MARK: - Properties
@@ -37,8 +39,10 @@ public class SpriteNode extends Node {
 		}
 	}
 
+	/// Corner radius of the receiver.
 	public float cornerRadius() { return _cornerRadius; }
 
+	/// Sets the corner radius of the receiver.
 	public void setCornerRadius(float cornerRadius) { _cornerRadius = cornerRadius; }
 
 	// MARK: - Initialization
