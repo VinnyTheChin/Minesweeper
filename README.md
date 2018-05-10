@@ -1,11 +1,11 @@
 # Project Outline
-- [x] Core API for drawing and scene management (@DaveAMoore)
-- [ ] Grid logic for bomb locations and point values (@DaveAMoore)
+- [x] Core API for drawing and scene management (David Moore – @DaveAMoore)
+- [ ] Grid logic for bomb locations and point values (David Moore – @DaveAMoore)
   - [ ] Create `Block` object to store pertinent information
   - [ ] Use 2D arrays to maintain matrix-like `Block` collection
-- [ ] Scoring system (Unassigned, please contact)
+- [ ] Scoring system (Wilson Mak – @DasNinjaWX)
   - [ ] High score storage (disk read & write)
-- [ ] Bomb field drawing (Unassigned, please contact)
+- [ ] Bomb field drawing (Wilson Mak – @DasNinjaWX)
   - [ ] User interaction
   - [ ] Make appropriate API calls
 - [ ] GUI (Unassigned, please contact)
