@@ -8,11 +8,11 @@
 - [ ] Bomb field drawing (Wilson Mak – @DasNinjaWX)
   - [ ] User interaction
   - [ ] Make appropriate API calls
-- [ ] GUI (Unassigned, please contact)
+- [ ] GUI (Connor Russo - @VinnyTheChin)
   - [ ] Main menu
   - [ ] Score display
-  - [ ] Restart button (smiley face)
-  - [ ] Timer
+  - [x] Restart button (smiley face)
+  - [x] Timer
 
 ### Assignments
 Team members will be assigned specific components to develop and test. It is important that such members perform the necessary tasks to ensure maximum compatibility and stability. Failure to comply with these requirements may result in the rejection of a pull request, ultimately limiting contribution capacity.
