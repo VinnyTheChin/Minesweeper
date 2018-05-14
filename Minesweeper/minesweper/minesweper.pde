@@ -44,7 +44,7 @@ void draw () {//void draw
   //timer below
   /////////////////////////////////////////////////////////////////////////////
   fill(255);//fills text
-  timer=timer+10;//increases timer
+  timer=timer+1;//increases timer
   rect(345, 45, 40, 14);//border of timer
   fill(255, 0, 0);//fills text
   text(""+int(timer/30), 330, 50);//displays timer and only displays whole numbers, every second. the /30 is because of the frame rate
